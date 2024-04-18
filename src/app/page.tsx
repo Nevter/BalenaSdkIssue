@@ -1,4 +1,4 @@
-import { getSdk } from "balena-sdk";
+import { getSdk } from 'balena-sdk';
 
 const balenaToken = process.env.BALENA_TOKEN;
 
