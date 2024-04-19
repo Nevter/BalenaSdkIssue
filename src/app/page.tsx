@@ -1,4 +1,4 @@
-import { getSdk } from 'balena-sdk';
+import * as BalenaSdk from 'balena-sdk';
 
 const balenaToken = process.env.BALENA_TOKEN;
 
@@ -8,7 +8,7 @@ export default async function Home() {
     throw new Error("BALENA_TOKEN env var is required");
   }
 
-  const balena = getSdk({ apiUrl: "https://api.balena-cloud.com" });
+  const balena = BalenaSdk.getSdk({ apiUrl: "https://api.balena-cloud.com" });
   await balena.auth.loginWithToken(balenaToken);
 
   const device = await balena.models.device.get("17fabed");
